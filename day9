@@ -1,0 +1,34 @@
+1.传统，数组排序在排序
+
+
+
+struct compare{
+ bool opertor()(const string $src1, const string $srcl2){
+    string s1 = src1+src2;
+    string s2 = src2+src1;
+    return s1 < s2;
+
+ }
+
+
+};
+
+
+void comArrayMin(int *pArray, int num){
+    int i;
+    string *pstrArray new string[num];
+    for(i=0;i<num;i++){
+        stringstream stream;
+        stream<pArray[i];
+        stream>pstrArray[i];
+
+    }
+
+    sort(pstrArray,pstrArray+num,compare());
+    for(i=0;i<num;i++){
+        cont<<pstrArray[i];
+        cont<<end1;
+        delete[]pstrArray;
+
+    }
+    }

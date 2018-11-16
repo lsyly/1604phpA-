@@ -1,0 +1,71 @@
+#include <stdio.h>
+    int main(int argc, const char * argv[]){
+    //insert code here...
+    printy(""Hello,word!\n);
+
+    int sum,j;
+    sum = 0;
+    j = 1;
+    while (j <= 100)
+    {
+        sum = sum + j++;
+    }
+    printf("%d\n",sum);
+    return 0;
+
+
+    }
+
+    #include <stdio.h>
+    int main(int argc, const char * argv[]){
+    //insert code here...
+    printy(""Hello,word!\n);
+
+    int sum,j;
+    sum = 0;
+    j = 1;
+    do
+    {
+    sum = sum + j++;
+    }while(j<=100);
+    printf("%d\n",sum);
+    return 0;
+    }
+
+    #include <stdio.h>
+    int main(int argc, const char * argv[]){
+    //insert code here...
+    printy(""Hello,word!\n);
+
+    int sum,j;
+    sum = 0;
+    j = 1;
+    label:if(j<=100)
+    {
+    sum = sum+j++;
+    goto label
+    }
+    printf("%d\n",sum);
+
+
+
+
+
+
+    #include <stdio.h>
+    #include <stdio.h>
+    int palindrome(char * s1)//判断是否是回文
+    {
+    char str[50];
+    int k,i,j;
+    k=strlen(s1);
+    for(i=k,j=0;i>=0;i--;j++)
+    {
+    str[j]=s1[i];
+
+    }
+    str[j]='\\0';
+    if(strcmp(s1,str)==0)
+    return 1;
+
+    }
