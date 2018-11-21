@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>标题</td>
+        <td><input type="text" name="biaoti"></td>
+    </tr>
+    <tr>
+        <td>内容</td>
+        <td><input type="text" name="neirong"></td>
+    </tr>
+    <tr>
+        <td>时间</td>
+        <td><input type="text" name="shijain"></td>
+    </tr>
+    <td><input type="submit" value="时间"></td>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+    jia();
+    $("#tj").click(function(){
+        var bt = $("#biaoti").val();
+        var nr = $("#neirong").val();
+        var sj = $("#shijian").val();
+
+        $.ajax({
+        url:"add.php",
+        data:{bt:biaoti,nr:neirong,sj:shijian},
+         type:"post",
+            datatype:"text",
+            success:function(data){
+            if(data=="1"){
+                alert("成功");
+            }else{
+                alert("失败");
+            }
+            }
+
+
+        })
+    })
+
+
+    function jia() {
+        $.ajax({
+            url: "add.php",
+            data: {bt: biaoti, nr: neirong, sj: shijian},
+            type: "post",
+            datatype: "text",
+            success: function(data){
+                var str = "";
+                if(data=="111")
+                {
+                    $("#ts").css("display","block");
+                }
+                else
+                {
+                    var hang = data.split("|");
+
+                    for(var i=0;i<hang.length;i++)
+                    {
+                        var lie = hang[i].split("^");
+
+                        str += "<tr><td>"+lie[1]+"</td><td>"+lie[2]+"</td><td>"+lie[3]+"</td><td>"+lie[4]+"</td><td>"+lie[5]+"</td><td>"+lie[6]+"</td><td><span class='sc1' bs='"+lie[0]+"'>删除</span>&nbsp;&nbsp;&nbsp;<span class='xg1' bs='"+lie[0]+"'>修改</span></td></tr>";
+                    }
+                    $("#aa1").html(str);
+            }
+        })
+    }
+</script>
